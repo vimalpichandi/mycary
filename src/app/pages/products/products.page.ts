@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 // model
 import { ProductListModel } from './../../model/product';
+import { StorageService } from './../../services/storage.service';
+import { CartService } from './../../services/cart.service';
 
 
 @Component({
@@ -43,7 +45,9 @@ template:`
                                                          <Strong>{{product.weight}}</Strong>
                                                    </span>
                                                 </p>
-                                                <button class="btn btn-success btn-sm" type="button">Add to Cart</button>
+                                                <button class="btn btn-success btn-sm"
+                                                  (click) = "cartAdd(product.uid)"
+                                                type="button">Add to Cart</button>
                                              </div>
                                          </div>
                                          </div>
@@ -114,7 +118,17 @@ template:`
 
 export class ProductListpage{
 title="Product List ";
-   constructor(public products:ProductListModel){
+   constructor(
+      public products:ProductListModel,
+      public storage:StorageService,
+      public cart:CartService
+    ){
 
   }
+cartAdd(pid:string){  
+ let cart = this.cart.cartAdd(this.storage.get('cart'),pid);
+  this.storage.set( {'cart' : cart } );
+
+}
+
 }

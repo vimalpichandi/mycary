@@ -4,10 +4,11 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
   <div class="wrapper">
-    <navbarheader></navbarheader>
+  <router-outlet></router-outlet>
+    <!--  <navbarheader></navbarheader>
     <products-dashboard></products-dashboard>
     <billingpagedetails></billingpagedetails>
-    <paymentpagedetails></paymentpagedetails>
+    <paymentpagedetails></paymentpagedetails> -->
 </div>
   `,
   styleUrls: ['./app.component.css']

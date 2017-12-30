@@ -8,21 +8,25 @@ import { ProductListModel } from './model/product';
 
 //pages
 import { navbarheader } from './pages/nav/nav.page';
+import { MyCartPage } from './pages/mycart/mycart.page';
 import { ProductListpage } from './pages/products/products.page';
 import { BillingListpage } from './pages/billing/billing.page';
 import { PaymentListpage } from './pages/payment/payment.page';
 
+//Services
+import { StorageService } from './services/storage.service';
+import { CartService } from './services/cart.service';
 
 import { AppComponent } from './app.component';
 
 
 const appRoutes: Routes = [
-  { path: 'mycart', component:AppComponent},
+  { path: 'mycart', component:MyCartPage},
   { path: 'products/products', component: ProductListpage },
   { path: 'billing/billing', component: BillingListpage },
   { path: 'payment/payment', component: PaymentListpage },
   { path: '',
-    redirectTo: '/mycart',
+    redirectTo: '/products/products',
     pathMatch: 'full'
   },
   //{ path: '**', component: PageNotFoundComponent }
@@ -33,7 +37,7 @@ const appRoutes: Routes = [
       { enableTracing: false, useHash:false} // <-- debugging purposes only
     ) ],
   declarations: [ AppComponent, ProductListpage, navbarheader, BillingListpage, PaymentListpage ],
-  providers: [ProductListModel],
+  providers: [ProductListModel,StorageService,CartService],
   bootstrap: [AppComponent ]
 })
 export class AppModule { }

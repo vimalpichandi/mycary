@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import {FormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-selector: 'billingpagedetails',
+//selector: 'billingpagedetails',
 template:`
+
+<navbarheader></navbarheader>
 
 <!-- START row-->
 <div class="content-wrapper">
