@@ -19,8 +19,9 @@ template:`
 <table class="table">
    <tbody>
       <tr *ngFor="let productsvalue of arrayKeys(OrderSum.cartLists)">
+      
          <td>{{OrderSum.cartLists[productsvalue].label}}</td>
-         <td><div class="text-left text-bold">
+         <td width="100px"><div class="text-left text-bold">
          <div class="input-group">
                    <span class="input-group-btn">
                        <button type="button"  (click)="cartUpdate('-',productsvalue)" class="btn btn-danger btn-xs"  data-type="minus" data-field="quant[1]">
