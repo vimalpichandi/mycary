@@ -33,7 +33,7 @@ template:`
                               <label>Address</label>
                               <textarea fromControlName="address" placeholder="Enter address" class="form-control"></textarea>
                            </div>
-                           <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                           <!--button type="submit" class="btn btn-primary btn-sm">Submit</button -->
                         </form>
                      </div>
                   </div>
@@ -42,44 +42,9 @@ template:`
                <div class="col-sm-6">
                   <!-- START panel-->
                   <div class="panel b">
-                     <div class="panel-heading bb">
-                        <h4 class="panel-title">Order Summnary</h4>
-                     </div>
-                     <div class="panel-body bt">
-                         <h4 class="b0">Order Item #3</h4>
-                     </div>
-                     <table class="table">
-                        <tbody>
-                           <tr>
-                              <td>APPLE</td>
-                              <td><div class="text-left text-bold">4-kg</div></td>
-                              <td><div class="text-right text-bold">Rs:49.6</div></td>
-                           </tr>
-                           <tr>
-                              <td>ORANGE</td>
-                              <td><div class="text-left text-bold">2-kg</div></td>
-                              <td><div class="text-right text-bold">Rs:20.8</div></td>
-                           </tr>
-                           <tr>
-                              <td>BANANA</td>
-                              <td><div class="text-left text-bold">1-kg</div></td>
-                              <td><div class="text-right text-bold">Rs:9.4</div></td>
-                           </tr>
-                        </tbody>
-                     </table>
+                    <OrderSummnarypagedetails></OrderSummnarypagedetails>
                      <div class="panel-body">
-                        <div class="clearfix">
-                        <div class="pull-right text-right">
-                           <div class="text-bold">Rs:79.8</div>
-                        </div>
-                           <div class="pull-left text-bold text-dark">ORDER TOTAL</div>
-                        </div>
-                     </div>
-                     <div class="panel-body">
-                        <p>
-                           <button class="btn btn-success btn-block" type="button">PAYMENT PROCESS</button>
-                        </p>
-
+                        <p><button [routerLink]="['/payment/payment']" class="btn btn-success btn-block" type="button">PAYMENT PROCESS</button></p>
                      </div>
                   </div>
                   <!-- END panel-->

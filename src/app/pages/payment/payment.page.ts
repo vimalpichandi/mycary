@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 selector: 'paymentpagedetails',
 template:`
 
+<navbarheader></navbarheader>
     <section>
          <!-- Page content-->
          <div class="content-wrapper">
