@@ -9,6 +9,7 @@ import { ProductListModel } from './model/product';
 //pages
 import { navbarheader } from './pages/nav/nav.page';
 import { MyCartPage } from './pages/mycart/mycart.page';
+import { OrderSummnarypage } from './pages/ordersum/ordersummnary.page';
 import { ProductListpage } from './pages/products/products.page';
 import { BillingListpage } from './pages/billing/billing.page';
 import { PaymentListpage } from './pages/payment/payment.page';
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
   imports: [ BrowserModule, FormsModule, RouterModule.forRoot( appRoutes,
       { enableTracing: false, useHash:false} // <-- debugging purposes only
     ) ],
-  declarations: [ AppComponent, ProductListpage, navbarheader, BillingListpage, PaymentListpage ],
+  declarations: [ AppComponent, ProductListpage, navbarheader, BillingListpage, PaymentListpage,OrderSummnarypage ],
   providers: [ProductListModel,StorageService,CartService],
   bootstrap: [AppComponent ]
 })
