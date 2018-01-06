@@ -22,8 +22,9 @@ export class CartService{
 
    }
    // View Cart
-   viewCart(localStorage:any,productmodel:any, productid:any){
+   viewCart(localStorage:any,productmodel:any){
      //console.log("===>",productmodel, item)
+    //console.log ("--->", productid)
      if(localStorage==undefined || localStorage=='' || localStorage==null){
         localStorage = {};
      }
@@ -35,9 +36,11 @@ export class CartService{
             price: Math.round(localStorage[item] * productmodel[item].price),
             weight: localStorage[item],
             label: productmodel[item].label,
+
             uid: productmodel[item].uid,
-	    unitprice: productmodel[item].price,
-	    gst:GrantAmount*28/100
+	           image: productmodel[item].image,
+	            unitprice: productmodel[item].price,
+	             gst:GrantAmount*28/100
            };
           ;
        // console.log("==2=>", item);
@@ -50,7 +53,6 @@ export class CartService{
    }
    // Cart delete
    cartDelete(localStorage:any,Pid:string){
-
      delete localStorage[Pid];
      return localStorage;
 
