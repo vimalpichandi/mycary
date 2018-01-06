@@ -19,7 +19,7 @@ template:`
 <table class="table">
    <tbody>
       <tr *ngFor="let productsvalue of arrayKeys(OrderSum.cartLists)">
-      
+
          <td>{{OrderSum.cartLists[productsvalue].label}}</td>
          <td width="100px"><div class="text-left text-bold">
          <div class="input-group">
@@ -28,7 +28,7 @@ template:`
                          <span  class="glyphicon glyphicon-minus"></span>
                        </button>
                    </span>
-                 <span>{{OrderSum.cartLists[productsvalue].weight}}</span>
+                 <span>{{OrderSum.cartLists[productsvalue].weight}} - Kg</span>
                    <span class="input-group-btn">
                        <button type="button"  (click)="cartUpdate('+',productsvalue)" class="btn btn-success btn-xs" data-type="plus" data-field="quant[2]">
                            <span class="glyphicon glyphicon-plus"></span>

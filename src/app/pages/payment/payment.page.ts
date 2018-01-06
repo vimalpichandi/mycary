@@ -55,9 +55,11 @@ template:`
                   </div>
                   <div class="table-responsive table-bordered mb-lg">
                      <table class="table">
-                        <thead>
+                        <thead class="bg-gray-lighter">
                            <tr>
-                              <th>Item #</th>
+
+			      <th>Item #</th>
+                              <th>Product Item</th>
                               <th>Description</th>
                               <th>Quantity</th>
                               <th>Unit Price</th>
@@ -66,8 +68,10 @@ template:`
                         </thead>
                         <tbody>
                           <tr *ngFor="let productsvalue of arrayKeys(OrderSum.cartLists)">
-                                    <td>{{ OrderSum.cartLists[productsvalue].uid}}</td>
-                              <td>{{OrderSum.cartLists[productsvalue].label}}</td>
+
+                              <td>{{ OrderSum.cartLists[productsvalue].uid}}</td>
+                              <td><img class="order-pic thumb64"  src="../../../assets/images/{{OrderSum.cartLists[productsvalue].image}}"></td>
+			      <td>{{OrderSum.cartLists[productsvalue].label}}</td>
                               <td width="100px"><div class="text-left text-bold">
          <div class="input-group">
                    <span class="input-group-btn">
@@ -75,7 +79,7 @@ template:`
                          <span  class="glyphicon glyphicon-minus"></span>
                        </button>
                    </span>
-                 <span>{{OrderSum.cartLists[productsvalue].weight}} Kg</span>
+                 <span> {{OrderSum.cartLists[productsvalue].weight}} - Kg</span>
                    <span class="input-group-btn">
                        <button type="button"  (click)="cartUpdate('+',productsvalue)" class="btn btn-success btn-xs" data-type="plus" data-field="quant[2]">
                            <span class="glyphicon glyphicon-plus"></span>
@@ -120,7 +124,7 @@ template:`
 
 export class PaymentListpage{
 title="Payment Page";
-
+public OrderSum:any=[];
 @Input("addFlag")
   set viewTrigger(flag:boolean){
   this.viewCart();

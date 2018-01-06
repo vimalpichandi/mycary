@@ -29,8 +29,8 @@ template:`
                                  <div class="panel-body">
                                  <!-- START row-->
                                   <div class="row">
-                                <div *ngFor="let product of arrayKeys(products.productedList)">
-                                         <div class="col-lg-4 col-md-6">
+                                <div *ngFor="let product of arrayKeys(products.productedList)" >
+                                         <div class="col-lg-4 col-md-6" >
                                          <div class="panel">
                                              <h3>{{products.productedList[product].label}}</h3>
                                              <div class="panel-body">
@@ -91,7 +91,6 @@ public prdAddFlag:boolean=false;
       public cart:CartService,
 
     ){
-
   }
   ngOnInit(){
   this.viewCart();
@@ -108,7 +107,7 @@ viewCart(){
 cartAdd(pid:string){
 //  console.log("0-0-0->",pid);
  let cart = this.cart.cartAdd(this.storage.get('cart'),pid);
-  this.storage.set( {'cart' : cart } );
+ this.storage.set( {'cart' : cart } );
  this.viewCart();
  setTimeout( ()=>{
  this.prdAddFlag=false;
